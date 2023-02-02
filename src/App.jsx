@@ -44,7 +44,8 @@ const App = () => {
             element={<Login onLogin={handleLogin} isLoggedIn={isLoggedIn} />}
           />
           <Route path="/register" element={<Register onLogin={handleLogin} />} />
-
+          <Route path="/home" element={<Home />} />
+          <Route path="/add" element={<Add />} />
         </Routes>
       </Router>
 

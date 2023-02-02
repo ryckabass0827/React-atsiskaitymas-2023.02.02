@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [form, setForm] = useState({ email: '', password: '' });
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+
 
     const handleChange = e => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,6 +23,7 @@ const Login = () => {
                 setError('Incorrect password');
             } else {
                 alert('Login successful!');
+                navigate('/home');
             }
         } catch (error) {
             console.error(error);
