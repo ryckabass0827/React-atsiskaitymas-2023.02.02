@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
+
 
 
 const Home = () => {
@@ -20,19 +22,24 @@ const Home = () => {
     }, []);
 
     return (
-        <>
-            <h1>Welcome, {user.email}</h1>
-            <h2>Profile</h2>
-            <p>Email: {user.email}</p>
-            <h2>Posts</h2>
-            {posts.map(post => (
-                <div key={post.id}>
-                    <h3>{post.title}</h3>
-                    <p>{post.description}</p>
-                </div>
-            ))}
+        <div className='HomePage'>
 
-        </>
+            <header className='header'>
+                <Navbar />
+            </header>
+            <h1>Welcome, {user.email}</h1>
+            <div className='Cards'>
+                <h2>Posts</h2>
+                {posts.map(post => (
+                    <div key={post.id}>
+                        <h3>{post.title}</h3>
+                        <p>{post.description}</p>
+
+                    </div>
+                ))}
+            </div>
+        </div>
+
     );
 };
 

@@ -40,8 +40,8 @@ const Register = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
+        <form className='RegisterForm' onSubmit={handleSubmit}>
+            <input className='R_email'
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -50,7 +50,7 @@ const Register = () => {
                 required
             />
             <br />
-            <input
+            <input className='R_password'
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -59,7 +59,7 @@ const Register = () => {
                 required
             />
             <br />
-            <input
+            <input className='R_password2'
                 type="password"
                 name="password2"
                 placeholder="Confirm Password"

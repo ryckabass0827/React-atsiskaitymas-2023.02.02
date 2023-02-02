@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
     const [form, setForm] = useState({ email: '', password: '' });
     const [error, setError] = useState('');
@@ -31,28 +32,31 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={form.email}
-                onChange={handleChange}
-                required
-            />
-            <br />
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={form.password}
-                onChange={handleChange}
-                required
-            />
-            <br />
-            <button type="submit">Login</button>
-            {error && <p>{error}</p>}
-        </form>
+        <>
+
+            <form className='LoginForm' onSubmit={handleSubmit}>
+                <input className='Email'
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                />
+                <br />
+                <input className='Password'
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={form.password}
+                    onChange={handleChange}
+                    required
+                />
+                <br />
+                <button type="submit">Login</button>
+                {error && <p>{error}</p>}
+            </form>
+        </>
     );
 };
 

@@ -7,14 +7,14 @@ const Navbar = () => {
             <div className="navbar-logo">
                 <img src="" alt="" />
             </div>
-            <ul className="navbar-links">
-                <li>
+            <div className="navbar-links">
+                <button>
                     <Link to="/home">Home</Link>
-                </li>
-                <li>
+                </button>
+                <button>
                     <Link to="/add">Add</Link>
-                </li>
-            </ul>
+                </button>
+            </div>
         </nav>
     );
 };
