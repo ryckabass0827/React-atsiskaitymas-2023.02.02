@@ -20,6 +20,8 @@ git clone https://github.com/<ryckabass0827>/React-atsiskaitymas-2023.02.02.git
  __ npm install __
  __ npm i react-router-dom __
  __ npm i json-server __
+ 
+ ## Start the server
  __ json-server --watch data.json __
   
   ## Start the development server
