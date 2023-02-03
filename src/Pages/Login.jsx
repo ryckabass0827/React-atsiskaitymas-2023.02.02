@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -34,6 +35,11 @@ const Login = () => {
     return (
         <>
 
+            <div className='Menu'>
+                <img src="" alt="" />
+                <button> <Link to="/login">Login</Link></button>
+                <button> <Link to="/register">Register</Link></button>
+            </div>
             <form className='LoginForm' onSubmit={handleSubmit}>
                 <input className='Email'
                     type="email"
