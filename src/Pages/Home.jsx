@@ -28,9 +28,10 @@ const Home = () => {
                 <Navbar />
             </header>
             <h1>Welcome, {user.email}</h1>
+            <h2>Posts</h2>
             <div className='Cards'>
 
-                <h2>Posts</h2>
+
                 {posts.map(post => (
                     <div className='Card' key={post.id}>
                         <h3>{post.title}</h3>

@@ -1,10 +1,24 @@
 body {
+    height: 100vh;
     margin: 0 auto;
+    padding: 0;
+    background-position: center;
+    background-size: contain;
+    background-color: #322a2a;
+    background-repeat: no-repeat;
+
 }
 
+.root {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 
 img {
     width: 200px;
+    border-radius: 64% 36% 100% 0% / 71% 35% 65% 29%;
+    border: white solid 1px;
 }
 
 .navbar {
@@ -12,10 +26,45 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
 
 }
 
+.HomePage {
+    color: white;
+    margin-top: 25%;
+    text-align: center;
+}
 
+.HomePage>h1 {
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: red solid 2px;
+    border-radius: 15px;
+}
+
+.Cards {
+    display: flex;
+
+
+    max-width: fit-content;
+}
+
+.Card {
+    width: 200px;
+    margin: 1%;
+    max-height: 300px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: white solid 1px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+
+}
 
 .navbar-links {
     display: flex;
@@ -23,4 +72,143 @@ img {
     gap: 20px;
     padding: 10px;
     margin-right: 50px;
+}
+
+.navbar-links>button {
+    font-size: large;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(106, 106, 229);
+}
+
+.navbar-links>button:hover {
+    background-color: red;
+    transition: 2s;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+
+}
+
+.RegLog {
+    width: 100%;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.RegLog_buttons {
+    display: flex;
+    gap: 100px;
+
+}
+
+.RegLog_buttons>button {
+    font-size: large;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(106, 106, 229);
+
+}
+
+.RegLog_buttons>button:hover {
+    background-color: red;
+    transition: 2s;
+}
+
+.regPage {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.Menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.Menu>button {
+    font-size: large;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(106, 106, 229);
+}
+
+.Menu>button:hover {
+    background-color: red;
+    transition: 2s;
+}
+
+.RegisterForm {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    border-radius: 39px;
+    background: linear-gradient(145deg, #362d2d, #2d2626);
+    box-shadow: 12px 12px 17px #161313,
+        -12px -12px 17px #4e4141;
+
+}
+
+.addPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.Add {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 300px;
+    padding: 30px;
+    width: 200px;
+    border-radius: 39px;
+    background: linear-gradient(145deg, #362d2d, #2d2626);
+    box-shadow: 12px 12px 17px #161313,
+        -12px -12px 17px #4e4141;
+}
+
+.logPage {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginForm {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 39px;
+    background: linear-gradient(145deg, #362d2d, #2d2626);
+    box-shadow: 12px 12px 17px #161313,
+        -12px -12px 17px #4e4141;
 }

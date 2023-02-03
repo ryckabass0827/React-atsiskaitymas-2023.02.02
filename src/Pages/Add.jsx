@@ -27,7 +27,7 @@ const Add = () => {
                 },
                 body: JSON.stringify(newPost)
             });
-            setSuccessMessage('Post submitted successfully');
+            setSuccessMessage('Post submitted successfully view it in Home page');
             if (!response.ok) {
                 throw new Error(response.statusText);
             }
@@ -45,29 +45,32 @@ const Add = () => {
                 <img src="" alt="" />
                 <Navbar />
             </header>
-
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="title"
-                    placeholder="Title"
-                    value={form.title}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-                <textarea
-                    name="description"
-                    placeholder="Description"
-                    value={form.description}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-                <button type="submit">Add Post</button>
-                {successMessage && <p>{successMessage}</p>}
-                {error && <p>{error}</p>}
-            </form>
+            <div className='addPage'>
+                <form className='Add' onSubmit={handleSubmit}>
+                    <p>Enter your Title</p>
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Title"
+                        value={form.title}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <p>Add some Description</p>
+                    <textarea
+                        name="description"
+                        placeholder="Description"
+                        value={form.description}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <button type="submit">Add Post</button>
+                    {successMessage && <p>{successMessage}</p>}
+                    {error && <p>{error}</p>}
+                </form>
+            </div>
         </>
     );
 };

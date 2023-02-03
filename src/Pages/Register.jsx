@@ -46,43 +46,48 @@ const Register = () => {
     return (
         <>
             <div className='Menu'>
-                <img src="" alt="" />
+                <img src="https://t4.ftcdn.net/jpg/04/89/63/47/240_F_489634765_xwyjfDKIOv6RRtrefiBN17tMGJ34pvxK.jpg" alt="logo" />
                 <button> <Link to="/login">Login</Link></button>
                 <button> <Link to="/register">Register</Link></button>
             </div>
-            <form className='RegisterForm' onSubmit={handleSubmit}>
-                <input className='R_email'
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-                <input className='R_password'
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={form.password}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-                <input className='R_password2'
-                    type="password"
-                    name="password2"
-                    placeholder="Confirm Password"
-                    value={form.password2}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-                <button type="submit">Register</button>
-                {successMessage && <p>{successMessage}</p>}
-                {error && <p>{error}</p>}
+            <div className='regPage'>
+                <form className='RegisterForm' onSubmit={handleSubmit}>
+                    <p>Enter your Email</p>
+                    <input className='R_email'
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <p>Enter your password</p>
+                    <input className='R_password'
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={form.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <p>Please repeat password</p>
+                    <input className='R_password2'
+                        type="password"
+                        name="password2"
+                        placeholder="Confirm Password"
+                        value={form.password2}
+                        onChange={handleChange}
+                        required
+                    />
+                    <br />
+                    <button type="submit">Register</button>
+                    {successMessage && <p>{successMessage}</p>}
+                    {error && <p>{error}</p>}
 
-            </form>
+                </form>
+            </div>
         </>
     );
 };
