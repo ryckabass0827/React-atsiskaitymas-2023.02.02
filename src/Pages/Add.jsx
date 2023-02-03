@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 
+
+
 const Add = () => {
-    const [form, setForm] = useState({ post: '' });
+    const [form, setForm] = useState({ title: '', description: '' });
     const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleChange = e => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -12,51 +15,61 @@ const Add = () => {
     const handleSubmit = async e => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/posts');
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            const data = await response.json();
-            const currentUser = data.find(user => user.email === localStorage.getItem('email'));
-            if (!currentUser) {
-                setError('User not found');
-                return;
-            }
-            const index = data.indexOf(currentUser);
-            data[index].posts = [...currentUser.posts, form.post];
-            await fetch('http://localhost:3000/posts', {
+            const newPost = {
+                title: form.title,
+                description: form.description
+            };
+
+            const response = await fetch('http://localhost:3000/posts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(newPost)
             });
-            setForm({ post: '' });
+            setSuccessMessage('Post submitted successfully');
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            setForm({ title: '', description: '' });
         } catch (error) {
-            setError(error.message);
+            setError(error);
         }
     };
 
+
+
     return (
-        <div className='AddPage'>
+        <>
             <header className='header'>
+                <img src="" alt="" />
                 <Navbar />
             </header>
 
-            <form className='PostForm' onSubmit={handleSubmit}>
-                <h2>Add your post</h2>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={form.title}
+                    onChange={handleChange}
+                    required
+                />
+                <br />
                 <textarea
-                    name="post"
-                    value={form.post}
+                    name="description"
+                    placeholder="Description"
+                    value={form.description}
                     onChange={handleChange}
                     required
                 />
                 <br />
                 <button type="submit">Add Post</button>
+                {successMessage && <p>{successMessage}</p>}
                 {error && <p>{error}</p>}
             </form>
-        </div>
+        </>
     );
 };
 
-export default Add
+export default Add;
