@@ -1,0 +1,26 @@
+body {
+    margin: 0 auto;
+}
+
+
+img {
+    width: 200px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+.navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    margin-right: 50px;
+}

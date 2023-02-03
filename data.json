@@ -14,6 +14,35 @@
       "id": 3,
       "email": "naudotojas3@email.com",
       "password": "1234"
+    },
+    [
+      {
+        "id": 1,
+        "email": "naudotojas@gmail.com",
+        "password": "1234"
+      },
+      {
+        "id": 2,
+        "email": "naudotojas2@email.com",
+        "password": "4321"
+      },
+      {
+        "id": 3,
+        "email": "naudotojas3@email.com",
+        "password": "1234"
+      },
+      {
+        "email": "naudotojas100@gmail.com",
+        "password": "1111",
+        "password2": "1111",
+        "id": 4
+      }
+    ],
+    {
+      "email": "pastasasasas@pastas.lt",
+      "password": "aaaa",
+      "password2": "aaaa",
+      "id": 5
     }
   ],
   "posts": [
@@ -28,6 +57,11 @@
       "title": "Antras postas",
       "description": " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis aliquid unde voluptas quam molestias corrupti inventore dignissimos corporis non iste tempora numquam, optio labore tempore tenetur modi amet dolore vel.",
       "userId": 2
+    },
+    {
+      "title": "dasd",
+      "description": "asdvRVervEWR",
+      "id": 3
     }
   ]
 }

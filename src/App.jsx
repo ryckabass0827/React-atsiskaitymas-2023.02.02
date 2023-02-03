@@ -6,6 +6,8 @@ import Home from './Pages/Home';
 import Add from './Pages/Add'
 import Footer from './components/Footer';
 import Main from './Pages/Main';
+import './App.css';
+
 
 
 const App = () => {

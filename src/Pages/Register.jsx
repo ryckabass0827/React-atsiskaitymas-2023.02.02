@@ -6,6 +6,7 @@ const Register = () => {
     const [form, setForm] = useState({ email: '', password: '', password2: '' });
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleChange = e => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,17 +24,19 @@ const Register = () => {
                 if (emailExists) {
                     setError('Email already exists');
                 } else {
-                    data = [...data, { ...form, id: data.length + 1 }];
                     await fetch('http://localhost:3000/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(data)
+                        body: JSON.stringify({ ...form, id: data.length + 1 })
                     });
-                    alert('Registration successful!');
-                    navigate('/home');
+                    setSuccessMessage('Registered successfully');
+                    setTimeout(() => {
+                        navigate('/home');
+                    }, 3000);
                 }
+
             }
         } catch (error) {
             console.log(error)
@@ -76,6 +79,7 @@ const Register = () => {
                 />
                 <br />
                 <button type="submit">Register</button>
+                {successMessage && <p>{successMessage}</p>}
                 {error && <p>{error}</p>}
 
             </form>
