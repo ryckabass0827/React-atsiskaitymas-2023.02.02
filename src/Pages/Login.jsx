@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 
 const Login = () => {
@@ -26,9 +26,10 @@ const Login = () => {
                 setError('Incorrect password');
             } else {
                 setSuccessMessage('Logged in successfully');
+                localStorage.setItem('email', user.email);
                 setTimeout(() => {
                     navigate('/home');
-                }, 3000);
+                }, 1000);
             }
         } catch (error) {
             console.error(error);

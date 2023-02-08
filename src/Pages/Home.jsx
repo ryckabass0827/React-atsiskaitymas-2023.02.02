@@ -27,7 +27,7 @@ const Home = () => {
             <header className='header'>
                 <Navbar />
             </header>
-            <h1>Welcome, {user.email}</h1>
+            <h1>Welcome, {user ? user.email : ''}</h1>
             <h2>Posts</h2>
             <div className='Cards'>
 

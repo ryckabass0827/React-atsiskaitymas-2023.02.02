@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 const Register = () => {
     const [form, setForm] = useState({ email: '', password: '', password2: '' });
@@ -33,8 +33,8 @@ const Register = () => {
                     });
                     setSuccessMessage('Registered successfully');
                     setTimeout(() => {
-                        navigate('/home');
-                    }, 3000);
+                        navigate('/login');
+                    }, 1000);
                 }
 
             }
