@@ -1,0 +1,47 @@
+# React-atsiskaitymas-2023.02.02
+A simple registration and login system using React and fetch API.
+
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+## Prerequisites
+What things you need to install the software and how to install them:
+
+Node.js
+npm (node package manager)
+Installing
+## Clone the repository to your local machine :
+git clone https://github.com/<ryckabass0827>/React-atsiskaitymas-2023.02.02.git
+  
+## Change into the project directory : 
+  cd React\ atsiskaitymas/atsiskaitymas
+  
+## Install the required dependencies 
+ __ npm install __
+ __ npm i react-router-dom __
+ __ npm i json-server __
+ 
+ ## Start the server
+ __ json-server --watch data.json __
+  
+  ## Start the development server
+  npm start
+  
+ ## Open the app in your browser at http://localhost:3001
+  
+ ## Functionality
+User can register with email and password
+User can log in with email and password
+The user will be redirected to the home page after successful login
+If the email is already registered, the user will be notified
+If the passwords don't match during registration, the user will be notified
+  
+ ## Notes
+The app uses a JSON file as a mock database for storing users
+The fetch requests are made to http://localhost:3000/users and http://localhost:3000/posts
+## Future Improvements
+Adding real database to store the users
+Adding password encryption for security
+Implementing forgot password feature
+## Contributing
+Feel free to contribute and make this project better !
